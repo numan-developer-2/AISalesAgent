@@ -1,121 +1,146 @@
 # AI Sales Agent | Systematic Sales Workspace
 
-**A client project connecting inbound conversations, lead qualification and sales follow-through.**
+**From an inbound question to an accountable sales workflow.**
 
-> **Client confidentiality:** This project was developed for a client. In accordance with the client's disclosure restrictions, only the frontend is published here. The backend, proprietary business knowledge, prompts, customer data, credentials and private infrastructure remain excluded. This README explains the complete project's purpose and architecture; the public application demonstrates its experience using fictional data and simulated actions.
+> **Client-project disclosure:** This project originated from client work. This public edition includes the frontend, backend, knowledge-preparation tools and automated tests with fictional business configuration and sample knowledge. Client environment files, API keys, OAuth credentials, customer records, original company documents and private operational artifacts are excluded. The bundled business is a demonstration, not the client's production deployment.
 
-**React 19 · TypeScript · Vite · Sales operations · Conversational AI**
+**React 19 · TypeScript · FastAPI · Python · SQLAlchemy · Gemini integration · RAG · Sales automation**
 
-## Project overview
+## Why this project exists
 
-AI Sales Agent brings a website assistant and a sales operations workspace into one connected journey. The wider full-stack project helps service businesses understand incoming inquiries, capture useful context, qualify interest and move each conversation toward a clear next step: a consultation, a proposal request or a human handover.
+An interested website visitor rarely arrives with a complete brief. Questions appear in chat, contact details arrive through forms, meeting requests move into calendars, and follow-up ownership can disappear between tools. Sales teams need a reliable way to understand both **who is interested** and **what should happen next**.
 
-The operator workspace makes that journey visible. Teams can review leads, continue conversations, assign follow-up work, inspect upcoming meetings and compare acquisition sources without reconstructing the customer's story across disconnected tools.
+AI Sales Agent connects a website assistant with an operator workspace. It supports service discovery, qualification, conversation history, consultation requests, human handover, sales-task ownership and source reporting. The intended value is clearer context and more consistent execution for agencies, consultancies and other service businesses handling inbound inquiries. No client revenue, conversion uplift or production SLA is claimed.
 
-This repository provides an interactive portfolio edition of that experience. It runs independently in the browser with a populated 90-day dataset and editable workflows, so visitors can explore the product without access to the client's systems.
+## The customer journey
 
-## The business problem
+1. **Engage:** A visitor asks about the business's services.
+2. **Understand:** Approved knowledge and structured business facts support the response.
+3. **Qualify:** Explicit contact details and requirements become a lead profile with explainable scoring.
+4. **Act:** The visitor confirms a consultation, proposal request or human handover through a validated form.
+5. **Follow through:** Operators assign owners, update due dates, continue conversations and record outcomes.
+6. **Measure:** Session cohorts and source reporting show how inquiries progress.
 
-For agencies, consultancies and other service businesses, the challenge is often what happens **after an inquiry arrives**:
+This is an inbound sales system. It does not discover prospect lists or send unsolicited cold outreach. A proposal request creates a sales task, not an automatically generated proposal document.
 
-- Visitors ask questions before they are ready to complete a structured brief.
-- Sales teams receive incomplete contact information and repeat discovery questions.
-- Conversation history, bookings and follow-up notes become scattered across tools.
-- Proposal and handover requests lack a clear owner or next action.
-- Activity totals alone do not explain which channels produce qualified opportunities.
+## Product capabilities
 
-The project addresses these gaps through a shared workflow: **engage → understand → qualify → act → follow through → measure**. Its intended value is clearer ownership, preserved customer context and more consistent sales execution. No revenue uplift, conversion improvement or client performance figure is claimed.
-
-## The complete customer journey
-
-1. **Engage:** A website visitor starts a conversation about the business's services.
-2. **Understand:** The private system uses approved business information and structured model responses to answer relevant questions and gather context.
-3. **Qualify:** Contact details, service interest and qualification signals become a reviewable lead record.
-4. **Choose a next step:** The visitor requests a consultation, asks for a proposal or seeks help from a person.
-5. **Follow through:** Operators manage ownership, due dates, notes and outcomes. Private integration adapters support scheduling and business-system delivery when configured.
-6. **Measure:** Session cohorts and source reporting help the team examine how interest progresses through the sales workflow.
-
-The product serves inbound inquiries. It does not discover prospect lists or run unsolicited outreach campaigns. A proposal request creates a sales task; it does not generate a finished proposal document.
-
-## Explore the workspace
-
-| Area | Purpose | Public demo interactions |
+| Workspace | Business purpose | Implementation |
 | --- | --- | --- |
-| **Overview** | Understand current activity and priorities | Reporting periods, conversation charts, priority leads and meeting summaries |
-| **Lead pipeline** | Organize and qualify opportunities | Search, stage and priority filters, pagination, profile edits, notes and CSV export |
-| **Conversations** | Preserve context and support human assistance | Message history, simulated takeover and local team replies |
-| **Meetings** | Review committed customer steps | Sample consultations and a visitor booking rehearsal |
-| **Sales desk** | Make follow-through accountable | Request assignment, due dates, progress notes, outcomes and history |
-| **Sales insights** | Compare activity and acquisition quality | 7/14/30/90-day cohorts, source comparisons and outcome charts |
-| **Automations** | Surface delivery work needing attention | Fictional queued jobs, retry and simulated processing |
-| **Knowledge base** | Organize information supporting the assistant | Search, add and remove sample documents |
-| **Settings** | Adapt the workspace to a business | Local identity, service and qualification preferences |
+| Overview | Understand current activity and priorities | Period filters, conversation charts, priority leads and meetings |
+| Lead pipeline | Organize and qualify opportunities | Search, filters, notes, stages, ownership, next actions and CSV export |
+| Conversations | Preserve context and support personal assistance | Saved messages, human takeover, operator replies and AI pause |
+| Meetings | Turn interest into an agreed next step | Availability, expiring offers, confirmation and duplicate protection |
+| Sales desk | Make follow-through accountable | Proposal/handover assignment, due dates, notes, outcomes and history |
+| Sales insights | Compare acquisition and outcomes | 7/14/30/90-day cohorts, source comparisons and outcome charts |
+| Automations | Manage delivery work | Durable jobs, leases, retries, blocked states and operator retry |
+| Knowledge base | Maintain business information | Approved knowledge search, manual additions and deletion |
+| Settings | Adapt the experience to a business | Identity, services, qualification, working hours and integration preferences |
 
-The visitor experience includes a sample business website and an assistant with explicitly labelled scripted replies, demonstrating the connection between customer actions and operator workflows.
+## Choose an operating mode
 
-### Demo data and behavior
+| Mode | What runs | Storage and external actions |
+| --- | --- | --- |
+| **Frontend showcase** | Static browser application with 90 days of fictional activity, 800+ sessions and 500+ leads | Browser-local state; scripted replies and simulated actions; no backend required |
+| **Backend-connected demo** | React + FastAPI + database + worker using `APP_MODE=demo` | Real local persistence and API workflows; deterministic replies and simulated delivery; smaller starter dataset |
+| **Configured live system** | Backend-connected UI with `APP_MODE=live` and selected provider integrations | Requires your own approved knowledge, credentials, HTTPS and acceptance testing |
 
-- **90 days of fictional activity**, with more than **800 sessions** and **500 lead profiles**.
-- Varied sources, stages, conversations, meetings and follow-up requests.
-- Charts and reports calculated from linked records, keeping the demonstration internally consistent.
-- Browser-local edits, with **Reset demo** available to restore the seed dataset.
-- No backend, paid API, model key or external account needed.
+The showcase and backend database are independent. Resetting the browser demo does not reset the server database. Names, contacts and commercial scenarios bundled with this public edition are fictional; use sample details during evaluation.
 
-Names, companies, messages and scenarios in the seed data are fictional. Seed email addresses use `example.com`. Use fictional details when exploring forms. Each browser has its own data; changes are not shared with other visitors. If local storage is unavailable, the app falls back to in-memory state and changes may be lost on reload.
-
-## Architecture and implementation
-
-The wider client application separates the user experience, conversational reasoning, validated actions and delivery work:
+## Architecture
 
 ```mermaid
 flowchart TD
     Visitor[Website visitor] --> Assistant[Website assistant]
-    Team[Sales team] --> Workspace[Sales workspace]
+    Operator[Sales operator] --> Workspace[Sales workspace]
     Assistant --> API[FastAPI service boundary]
     Workspace --> API
-    API --> Knowledge[Approved knowledge and retrieval]
-    API --> Model[Structured model responses]
+    API --> Knowledge[Business knowledge retrieval]
+    API --> AI[Structured Gemini response]
     API --> Rules[Qualification and action validation]
-    Rules --> Records[Persistent business records]
+    Rules --> DB[Persistent workspace records]
     Rules --> Booking[Confirmed scheduling]
     Booking --> Calendar[Calendar adapter]
-    Records --> Worker[Durable delivery worker]
+    DB --> Worker[Durable Python worker]
     Worker --> Delivery[Email, Sheets and CRM adapters]
 ```
 
-The diagram describes the private project's architecture. These backend services are not included or connected in this repository.
+The API owns validation and state transitions. The model proposes intent and supported facts; it cannot directly send messages or book meetings. A separate worker performs configured delivery tasks. n8n is not required by the runtime.
 
-| Layer | Technology and responsibility | Published here |
+| Layer | Technologies |
+| --- | --- |
+| Frontend | React 19, TypeScript, Vite, Radix Dialog, Lucide icons, responsive CSS |
+| API and domain | Python, FastAPI, Pydantic |
+| Persistence | SQLAlchemy; SQLite locally, PostgreSQL support |
+| AI and retrieval | Gemini structured responses; local lexical retrieval; optional Supabase pgvector |
+| Delivery | Google Calendar, Google Sheets, SMTP and authenticated HTTPS CRM adapters |
+| Quality | pytest, Vitest, Testing Library, HTTP smoke workflows and TypeScript compilation |
+
+## How company knowledge powers the assistant
+
+The RAG layer connects a visitor's question to approved company information before the assistant produces a factual response. RAG means **retrieval-augmented generation**: retrieving reference material at request time, rather than assuming the model already knows the company's services, policies or prices. It does not train a new model on each uploaded document.
+
+### 1. Prepare approved knowledge
+
+The preparation pipeline organizes website and business content into identifiable chunks. Each chunk carries source text, a stable identifier, a title, a source URL and content metadata. Pricing is also stored as structured records so amounts, currency, billing periods, service mappings and review status can be checked explicitly.
+
+On first workspace initialization, the backend imports the configured business's frozen JSONL corpus into its own persisted knowledge records. Existing business records remain authoritative on restart. Operators can add or remove approved knowledge through the workspace. Changing a source file does not automatically refresh an already initialized knowledge base; content updates need a deliberate review and import process.
+
+### 2. Retrieve relevant company context
+
+| Retrieval path | Actual implementation | Scope |
 | --- | --- | --- |
-| User experience | React 19, TypeScript, Vite, Radix Dialog, Lucide icons and responsive CSS | Yes |
-| Demo behavior | Local TypeScript adapter, synthetic records and browser persistence | Yes |
-| API and domain | Python, FastAPI and Pydantic for request and action validation | No |
-| Conversational reasoning | Gemini structured responses and approved knowledge retrieval | No |
-| Persistence | SQLAlchemy with SQLite for local operation and PostgreSQL support | No |
-| Scheduling and delivery | Calendar, Sheets, SMTP and CRM adapters with a separate Python worker | No |
+| Default workspace retrieval | Keyword overlap over persisted knowledge, with extra weight for title matches | Restricted to the current business's records |
+| Optional vector retrieval | Query embeddings and a Supabase pgvector similarity RPC, with ranked source chunks | Optional legacy integration for the configured Systematic business |
 
-For this public edition, the frontend selects a local showcase adapter at build time:
+The default path is lexical retrieval, not semantic vector search. The optional vector path requires a compatible, separately ingested corpus and configured provider access. It is not automatically provisioned for each new business. The embedding pipeline validates vector dimensions and rejects non-finite values; the reusable context builder limits assembled reference length, including source separators.
+
+### 3. Apply business rules before generation
+
+Service catalog questions and reviewed pricing can be answered through deterministic routes. A service-specific price must map to the requested service; an unrelated published package is not treated as its quote. Unreviewed or unsupported pricing falls back to team confirmation.
+
+For other live questions, the workspace supplies business context, recent conversation history and retrieved records to Gemini with a structured response schema. Reference material and visitor messages are treated as data, while system instructions define the assistant's role. A pattern filter excludes some suspicious reference content; this is a defensive check, not a guarantee against every prompt-injection technique.
+
+### 4. Validate evidence and communicate uncertainty
+
+The model returns structured intent, proposed lead updates, action suggestions and source evidence. The workspace verifies that cited source IDs exist and quoted text occurs in the supplied records. It rejects unsupported numerical/contact claims and claims that an external action has already completed. Published factual responses use checked source excerpts instead of unchecked generated factual prose.
+
+If evidence is insufficient, the assistant says it cannot confirm the answer and offers human assistance. Source matching establishes where text came from; it does not certify that a company's source material is correct, current or sufficient for the question. Business review and representative answer-quality evaluation remain essential.
+
+### 5. Keep conversation and execution separate
+
+An AI suggestion to book a meeting or request a proposal cannot execute that action on its own. Separate API endpoints validate contact details, explicit confirmation and business ownership. Booking offers expire, repeated requests are handled idempotently, and uncertain external booking outcomes can require operator reconciliation.
 
 ```mermaid
 flowchart LR
-    UI[Workspace and visitor UI] --> Adapter[Local showcase adapter]
-    Adapter --> Data[Synthetic dataset]
-    Adapter --> State[Browser-local state]
-    Adapter --> Analytics[Derived reports and charts]
+    Question[Visitor question] --> Rules[Catalog and pricing routes]
+    Question --> Retrieve[Business-scoped knowledge retrieval]
+    Retrieve --> Context[Reference records and recent history]
+    Context --> Model[Structured model response]
+    Model --> Evidence[Source and output validation]
+    Evidence --> Answer[Checked excerpt or uncertainty response]
+    Model --> Suggestion[Suggested next step]
+    Suggestion --> Confirm[Visitor confirmation form]
+    Confirm --> Validate[Validated action endpoint]
 ```
 
-### Engineering priorities
+The standalone showcase simulates this experience. The backend-connected mode runs the actual API, persistence and validation code. Live inference needs your own provider credentials and reviewed knowledge; no client corpus or account is included.
 
-- **Coherent records:** conversations, leads, requests and reporting describe connected customer journeys.
-- **Reliable analytics interactions:** reports retain accurate period labels during updates, with protection against stale responses.
-- **Clear ownership:** sales tasks record responsibility, progress and outcomes instead of stopping at contact capture.
-- **Usable large lists:** lead pagination and progressive conversation loading keep the populated demo manageable.
-- **Accessible controls:** labelled dialogs, keyboard chart inspection, navigation focus handling and reduced-motion support.
-- **Static deployment:** query-based visitor views and hash-based workspace navigation support hosting without a backend router.
+## Reliability and engineering decisions
 
-## Run locally
+- **Business isolation:** operational records and sessions are scoped to a business; visitor tokens identify one conversation.
+- **Conservative factual output:** reviewed catalog/pricing routes and checked source excerpts limit unsupported claims.
+- **Explicit execution:** expiring booking offers, confirmation, idempotency and uncertain-booking reconciliation separate intent from completed actions.
+- **Recoverable delivery:** persisted jobs use deduplication, leases and retries, with blocked states for missing configuration.
+- **Consent-aware follow-up:** suppression, consent and lead status are checked before follow-up delivery.
+- **Stable UI interactions:** analytics protect against stale responses; large lists use pagination or progressive loading; dialogs and charts expose keyboard controls.
+- **Bounded inputs:** API write bodies are limited to 64 KiB before parsing; model and embedding requests use transport limits.
 
-Use **Node.js 22.12 or newer** and npm.
+External delivery is at least once, not exactly once. An interrupted SMTP request can still have an uncertain outcome. The rate limiter is process-local; begin with one API process and one worker. Shared limiting, schema migrations, capacity planning and backup recovery need deployment-specific validation.
+
+## Quick start: frontend showcase
+
+Requirements: Node.js 22.12 or newer and npm.
 
 ```bash
 git clone https://github.com/numan-developer-2/AISalesAgent.git
@@ -124,73 +149,157 @@ npm ci
 npm run dev
 ```
 
-Open **http://localhost:5173**. Enter workspace ID **`systematic`** and choose **Open demo workspace**. No email or password is required. This entry screen is a demonstration gate, not production authentication.
-
-On Windows PowerShell, use `npm.cmd` if your execution policy blocks `npm.ps1`.
+Open **http://localhost:5173**, enter workspace ID **`systematic`**, and select **Open demo workspace**. No password is needed for demo mode. On Windows, use `npm.cmd` if PowerShell blocks `npm.ps1`.
 
 ```bash
-# Run the frontend tests
 npm test
-
-# Compile TypeScript and build the standalone showcase
 npm run build
-
-# Preview the production build at http://localhost:4173
 npm run preview
 ```
 
-The production output is **`dist-showcase/`**. Default development and build commands select showcase mode automatically.
+The default build creates `dist-showcase/`; preview uses port 4173. No API keys or environment variables are needed for this mode. Browser storage is local to each visitor, with an in-memory fallback if storage is unavailable.
 
-## Deploy on Vercel
+## Run the backend-connected application
 
-Import this GitHub repository into Vercel and use these settings:
+The Python dependency lock was validated with **Python 3.13 on Windows**. Commands below use PowerShell from the cloned repository root.
 
-| Setting | Value |
-| --- | --- |
-| Framework preset | Vite |
-| Root directory | Repository root (`./`) |
-| Install command | `npm ci` |
-| Build command | `npm run build` |
-| Output directory | `dist-showcase` |
-| Node.js | 22.x or a supported newer version meeting the package requirement |
-| Environment variables | None required |
-
-The included `vercel.json` defines the install command, build command and output directory. Workspace navigation uses URL hashes and visitor views use query parameters, so the demo does not require backend endpoints or path rewrites. See [Vercel's Vite deployment documentation](https://vercel.com/docs/frameworks/frontend/vite) for platform setup.
-
-## Suggested walkthrough
-
-1. Open Overview and compare short-term and 90-day activity.
-2. Filter the lead pipeline and update a fictional lead's next action.
-3. In Sales insights, select an outcome metric and switch reporting periods.
-4. Open **Preview assistant**, request a proposal and submit fictional details.
-5. Return to the workspace, refresh and review the request in Sales desk.
-6. Assign an owner, record progress and try a simulated consultation booking.
-7. Use **Reset demo** to restore the initial dataset.
-
-## Verification and boundaries
-
-The frontend includes **36 automated tests** covering workspace navigation, analytics interactions, delayed and out-of-order responses, keyboard chart controls, local edits, request ownership, visitor flows and reporting consistency. The suite and production build passed during preparation. Tests include checks that showcase actions do not make unexpected network calls.
-
-Automated validation does not replace visual review across browsers and devices. A deployed Vercel instance must still be checked after deployment; no live production certification is implied.
-
-**Public demo limitations:** chat responses are scripted and do not call an LLM. Sample knowledge edits do not train or ground a model. Bookings, replies and automation actions update local demo state; they do not send emails, create external calendar events or update a CRM. Reports count sessions rather than unique people, and overlapping outcomes are not a sequential attribution funnel.
-
-**Private system context:** live model quality, provider connectivity, credentials, infrastructure and operational acceptance remain deployment responsibilities outside this public repository.
-
-## Repository scope
-
-```text
-src/                 Frontend components, styles, types, demo adapter and tests
-index.html           Application entry point
-package.json         Dependencies and development commands
-package-lock.json    Reproducible dependency resolution
-tsconfig.json        TypeScript configuration
-vite.config.ts       Frontend build and test configuration
-vercel.json          Static deployment settings
-.gitignore           Local files excluded from version control
-README.md            Product case study and usage guide
+```powershell
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r backend/requirements-dev.txt
+$env:PYTHONPATH = 'backend/src'
+$env:APP_MODE = 'demo'
+$env:APP_ORIGIN = 'http://localhost:5173'
+.\.venv\Scripts\python.exe -m uvicorn workspace.api:app --host 127.0.0.1 --port 8000
 ```
 
-Only the frontend and this README are shared, along with configuration needed to install, test, build and host the application. Backend source, real customer records, client documents, environment files and operational secrets are not part of the public distribution.
+In a second terminal, from the same repository:
+
+```powershell
+npm.cmd run dev:connected
+```
+
+In a third terminal, run the worker:
+
+```powershell
+$env:PYTHONPATH = 'backend/src'
+$env:APP_MODE = 'demo'
+.\.venv\Scripts\python.exe -m workspace.worker
+```
+
+Open **http://localhost:5173** and use workspace ID **`systematic`**. API docs are at **http://localhost:8000/api/docs** in demo mode. Demo and live modes use separate ignored databases under `data/runtime/` unless `APP_DATABASE_URL` overrides the connection.
+
+To serve the connected frontend directly from FastAPI, run `npm run build:connected` and restart the API. Open **http://localhost:8000**. The backend serves `dist/`; it does not serve the browser-only showcase bundle.
+
+On macOS/Linux, use `.venv/bin/python` and `export PYTHONPATH=backend/src` / `export APP_MODE=demo` in place of PowerShell syntax. Linux/container acceptance is still pending for the current lock.
+
+### Backend checks
+
+```powershell
+$env:PYTHONPATH = 'backend/src'
+.\.venv\Scripts\python.exe -m pytest backend/tests -q
+npm.cmd run build:connected
+.\.venv\Scripts\python.exe scripts/qa/run_workspace_http_smoke.py
+```
+
+The HTTP runner starts an isolated demo API and worker, verifies capture, assignment, simulated booking, job processing and restart persistence, then stops its processes. Reports and temporary databases are gitignored.
+
+## Knowledge preparation and optional vector ingestion
+
+`scraper/` contains discovery, extraction, cleaning, classification, deduplication and chunking code. Its public configuration points to `example.com`; replace it with an approved site before an intentional crawl. Generated website content and review artifacts are excluded from Git.
+
+```bash
+cd scraper
+python -m pip install -r requirements.txt
+python -m pytest tests -q
+python -m src.main --mode full
+```
+
+Use a separate Python environment for optional scraper dependencies. Review extracted facts before importing them. The bundled `data/knowledge/` corpus contains five newly authored fictional examples, plus synthetic service/profile/pricing records. Its sample price is marked **needs review**, so it is not offered as an approved quote.
+
+Validate the bundled vector-ingestion inputs without credentials or network writes:
+
+```bash
+python scripts/ingestion/ingest_knowledge.py --dry-run
+```
+
+For optional Supabase retrieval, provision the knowledge schema from `supabase/migrations/001_rag_knowledge_schema.sql`, configure matching embedding settings and server-side credentials, and explicitly run the ingestion script against your intended database. Ingestion performs paid embedding calls and database upserts when `--dry-run` is omitted. Never put a Supabase server key in the frontend.
+
+Migrations `002` and `003` support the earlier standalone sales-agent/action modules. The workspace API instead creates its own `workspace_*` tables, using a private schema on PostgreSQL. These are distinct persistence paths, not automatic migrations of one into the other.
+
+## Configuration and live services
+
+No `.env` or credential file is distributed. Provide values through your shell, deployment secret store or a local ignored `.env`. Demo mode needs no external credentials.
+
+| Configuration | Purpose |
+| --- | --- |
+| `APP_MODE`, `APP_ORIGIN`, `COOKIE_SECURE` | Runtime mode and trusted frontend origin; live mode requires HTTPS and secure cookies |
+| `APP_DATABASE_URL` | Optional PostgreSQL connection using the `postgresql+psycopg://` dialect |
+| `ADMIN_EMAIL`, `ADMIN_PASSWORD_HASH` | Live operator authentication |
+| `GEMINI_API_KEY`, `GEMINI_CHAT_MODEL` | Live structured model responses |
+| `RAG_PROVIDER` | `local` by default; optional `supabase` path for the default business |
+| `SUPABASE_URL`, `SUPABASE_SECRET_KEY` | Server-side access to the optional vector corpus |
+| `GEMINI_EMBEDDING_MODEL`, `GEMINI_EMBEDDING_DIMENSION` | Matching ingestion/query configuration; current implementation expects `gemini-embedding-2` and 768 dimensions |
+| `GOOGLE_CALENDAR_ID`, `GOOGLE_CALENDAR_TOKEN_FILE` | Calendar scheduling authorization |
+| `SMTP_HOST`, `SMTP_PORT`, `SMTP_USER`, `SMTP_PASSWORD`, `SMTP_FROM` | Email notifications and consented follow-up |
+| `GOOGLE_SHEET_ID`, `GOOGLE_SHEETS_TOKEN_FILE` | Sheets delivery |
+| `CRM_WEBHOOK_URL`, `CRM_API_KEY` | Authenticated HTTPS CRM webhook |
+
+Enable only the intended adapters in business settings and configure their destinations. Credential presence does not prove a connection works. New businesses use independent prefixes such as `ACME_GEMINI_API_KEY`; they do not inherit the default business's credentials.
+
+```bash
+# Interactive password hashing; password input is hidden
+python scripts/setup_workspace.py --password-hash
+
+# Create a separate business configuration
+python scripts/setup_workspace.py --id acme --name "Acme Demo" --website https://acme.example
+
+# OAuth setup requires your own private client file
+python scripts/google/authorize_workspace.py calendar --client config/google_calendar_credentials.json --token config/google_calendar_token.json
+```
+
+Optional acceptance tools:
+
+```bash
+# Makes up to three live model calls and stops on provider errors
+python scripts/qa/run_workspace_answer_qa.py --live
+
+# Checks presence and Calendar free/busy; creates no event or credential file
+python scripts/qa/run_workspace_service_check.py --calendar-readonly
+```
+
+## Deployment
+
+**Vercel hosts the frontend showcase.** Import this repository with Vite, root directory `./`, install command `npm ci`, build command `npm run build`, and output directory `dist-showcase`. No environment variables are needed. `vercel.json` already supplies these settings. See [Vercel's Vite documentation](https://vercel.com/docs/frameworks/frontend/vite).
+
+**The connected application needs a Python host, persistent database and worker.** The included Dockerfile builds the connected frontend, and `docker compose up --build` provides a local demo API/worker configuration with a named data volume. It intentionally binds to loopback and runs demo mode; it is not a production hosting configuration. Container execution, PostgreSQL and HTTPS acceptance remain unverified in this environment.
+
+## Quality and readiness
+
+The November 18 public-package verification passed **198 backend tests**, **36 frontend tests** and **12 scraper tests**. Both frontend build modes and the running API/worker demo workflow passed. The fictional ingestion inputs passed a dry run without credentials or network writes. Dependency updates addressed advisories in certifi, OAuthlib, OpenTelemetry API and pyasn1; the fresh audit of 78 locked backend runtime packages reported zero known vulnerabilities. Audit results are point-in-time evidence, not a guarantee of security.
+
+The reviewed live setup is **not production-approved**: a Gemini probe returned a transient provider error, Calendar token refresh failed, and selected delivery/admin settings were missing. This public repository includes none of those accounts or credentials. Complete your own provider, business-knowledge, deployment and browser acceptance before enabling real actions.
+
+The current Starlette TestClient emits one deprecation warning about its HTTPX transport; the scraper run also emitted BeautifulSoup/lxml deprecation warnings. Visual browser/device QA, load testing and backup restore remain separate checks. Reports count sessions rather than unique people; outcome categories may overlap and do not establish advertising ROI.
+
+## Repository layout
+
+```text
+src/                    React workspace, assistant, showcase adapter and frontend tests
+public/                 Embeddable assistant launcher
+backend/src/            Workspace API, RAG, agents, domain services and worker
+backend/tests/          Backend regression tests
+config/businesses/      Fictional business configuration
+data/knowledge/         Fictional sample corpus and structured knowledge
+data/examples/          Small synthetic evaluation inputs
+scraper/                Knowledge-preparation source, configuration and tests
+scripts/                Setup, OAuth, ingestion and QA utilities
+supabase/migrations/    Optional vector and earlier sales-module schemas
+Dockerfile              Connected application image definition
+compose.yaml            Local API/worker demo configuration
+vercel.json             Standalone showcase deployment settings
+README.md               Product, architecture and setup guide
+```
+
+The repository excludes client documents, real records, runtime databases, scraped outputs, credentials, internal presentations, historical QA reports, temporary folders and dependency/build artifacts.
 
 **Developed by [Numan](https://github.com/numan-developer-2).**

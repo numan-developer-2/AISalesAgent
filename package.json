@@ -7,17 +7,21 @@
     "node": ">=22.12.0"
   },
   "scripts": {
-    "dev": "vite --mode showcase --host localhost --strictPort",
-    "dev:showcase": "vite --mode showcase --host localhost --strictPort",
-    "build:showcase": "tsc -b && vite build --mode showcase --base ./ --outDir dist-showcase",
+    "dev:connected": "node init && vite --mode development --host localhost --strictPort",
+    "build:connected": "node init && tsc -b && vite build --mode production",
+    "dev": "node init && vite --mode showcase --host localhost --strictPort",
+    "dev:showcase": "node init && vite --mode showcase --host localhost --strictPort",
+    "build:showcase": "node init && tsc -b && vite build --mode showcase --base ./ --outDir dist-showcase",
     "preview:showcase": "vite preview --outDir dist-showcase --host localhost --port 4173 --strictPort",
-    "build": "tsc -b && vite build --mode showcase --base ./ --outDir dist-showcase",
+    "build": "node init && tsc -b && vite build --mode showcase --base ./ --outDir dist-showcase",
     "preview": "vite preview --outDir dist-showcase --host localhost --port 4173 --strictPort",
     "test": "vitest run"
   },
   "dependencies": {
     "@radix-ui/react-dialog": "1.1.15",
+    "dotenv": "^8.2.0",
     "lucide-react": "0.468.0",
+    "node-fetch": "^3.3.2",
     "react": "19.1.1",
     "react-dom": "19.1.1"
   },

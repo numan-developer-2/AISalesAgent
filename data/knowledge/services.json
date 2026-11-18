@@ -1,0 +1,82 @@
+[
+  {
+    "service_name": "Local SEO",
+    "category": "Fictional services",
+    "description": "Synthetic service example for portfolio exploration.",
+    "primary_url": "https://example.com/services",
+    "source_confidence": "sample",
+    "limitations": [
+      "Business review required before live use"
+    ]
+  },
+  {
+    "service_name": "SEO",
+    "category": "Fictional services",
+    "description": "Synthetic service example for portfolio exploration.",
+    "primary_url": "https://example.com/services",
+    "source_confidence": "sample",
+    "limitations": [
+      "Business review required before live use"
+    ]
+  },
+  {
+    "service_name": "Web Development",
+    "category": "Fictional services",
+    "description": "Synthetic service example for portfolio exploration.",
+    "primary_url": "https://example.com/services",
+    "source_confidence": "sample",
+    "limitations": [
+      "Business review required before live use"
+    ]
+  },
+  {
+    "service_name": "Shopify Development",
+    "category": "Fictional services",
+    "description": "Synthetic service example for portfolio exploration.",
+    "primary_url": "https://example.com/services",
+    "source_confidence": "sample",
+    "limitations": [
+      "Business review required before live use"
+    ]
+  },
+  {
+    "service_name": "Digital Marketing",
+    "category": "Fictional services",
+    "description": "Synthetic service example for portfolio exploration.",
+    "primary_url": "https://example.com/services",
+    "source_confidence": "sample",
+    "limitations": [
+      "Business review required before live use"
+    ]
+  },
+  {
+    "service_name": "Google Ads",
+    "category": "Fictional services",
+    "description": "Synthetic service example for portfolio exploration.",
+    "primary_url": "https://example.com/services",
+    "source_confidence": "sample",
+    "limitations": [
+      "Business review required before live use"
+    ]
+  },
+  {
+    "service_name": "Branding",
+    "category": "Fictional services",
+    "description": "Synthetic service example for portfolio exploration.",
+    "primary_url": "https://example.com/services",
+    "source_confidence": "sample",
+    "limitations": [
+      "Business review required before live use"
+    ]
+  },
+  {
+    "service_name": "Social Media Marketing",
+    "category": "Fictional services",
+    "description": "Synthetic service example for portfolio exploration.",
+    "primary_url": "https://example.com/services",
+    "source_confidence": "sample",
+    "limitations": [
+      "Business review required before live use"
+    ]
+  }
+]

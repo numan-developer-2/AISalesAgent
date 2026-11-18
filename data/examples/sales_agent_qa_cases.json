@@ -1,0 +1,17 @@
+[
+  {
+    "case_id": "demo_services",
+    "category": "discovery",
+    "user_message": "Which services do you offer?"
+  },
+  {
+    "case_id": "demo_unknown",
+    "category": "grounding",
+    "user_message": "Are you certified for an unspecified industry standard?"
+  },
+  {
+    "case_id": "demo_action",
+    "category": "actions",
+    "user_message": "I would like to request a consultation."
+  }
+]

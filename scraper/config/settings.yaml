@@ -1,0 +1,16 @@
+target_domain: example.com
+start_url: https://example.com/
+max_concurrency: 3
+request_delay_min_ms: 500
+request_delay_max_ms: 1500
+max_retries: 3
+request_timeout: 30
+max_pages: 120
+enable_playwright: false
+scrape_blogs: true
+blog_limit: 20
+language: en
+output_directory: output
+respect_robots: true
+user_agent: "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/127.0 Safari/537.36 AgentSalesKnowledgeScraper/1.0"
+incremental_state_file: output/state.json

@@ -1,0 +1,19 @@
+{
+  "company_name": "Systematic Demo Studio",
+  "website": "https://example.com",
+  "description": "A fictional business used to demonstrate sales workflows.",
+  "emails": [],
+  "phone_numbers": [],
+  "contact_urls": [],
+  "services": [
+    "Local SEO",
+    "SEO",
+    "Web Development",
+    "Shopify Development",
+    "Digital Marketing",
+    "Google Ads",
+    "Branding",
+    "Social Media Marketing"
+  ],
+  "sample": true
+}

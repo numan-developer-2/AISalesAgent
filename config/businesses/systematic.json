@@ -1,0 +1,50 @@
+{
+  "id": "systematic",
+  "name": "Systematic Demo Studio",
+  "short_name": "Systematic",
+  "tagline": "Fictional services. Connected sales workflows.",
+  "website": "https://example.com",
+  "accent": "#e97845",
+  "timezone": "Asia/Karachi",
+  "welcome": "Welcome to the fictional sales demo. Use sample details to explore services and consultation requests.",
+  "services": [
+    "Local SEO",
+    "SEO",
+    "Web Development",
+    "Shopify Development",
+    "Digital Marketing",
+    "Google Ads",
+    "Branding",
+    "Social Media Marketing"
+  ],
+  "qualification": {
+    "hot_threshold": 70,
+    "warm_threshold": 40,
+    "minimum_budget": 500
+  },
+  "working_hours": {
+    "start": "10:00",
+    "end": "18:00",
+    "duration": 30,
+    "buffer": 15
+  },
+  "allowed_origins": [
+    "https://example.com",
+    "https://www.example.com"
+  ],
+  "navigation": [
+    {
+      "label": "Example website",
+      "url": "https://example.com"
+    }
+  ],
+  "notification_email": "",
+  "followup_hours": 24,
+  "integrations": {
+    "email": false,
+    "sheets": false,
+    "crm": false,
+    "calendar": false
+  },
+  "knowledge_directory": "data/knowledge"
+}

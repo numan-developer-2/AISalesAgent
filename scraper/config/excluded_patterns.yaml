@@ -1,0 +1,14 @@
+exclude:
+  - /wp-admin
+  - /wp-login
+  - /cart
+  - /checkout
+  - /my-account
+  - /feed
+  - /comments
+  - /xmlrpc.php
+  - ?replytocom=
+  - /tag/
+  - /author/
+  - /category/
+  - /page/

@@ -1,0 +1,16 @@
+[
+  {
+    "plan_name": "Illustrative SEO Starter",
+    "service": "SEO",
+    "price": "199.95",
+    "currency": "USD",
+    "billing_period": "monthly",
+    "starting_from": true,
+    "needs_review": true,
+    "features": [
+      "Fictional example only; not an approved commercial quote"
+    ],
+    "source_url": "https://example.com/pricing",
+    "sample": true
+  }
+]

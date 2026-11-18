@@ -1,0 +1,13 @@
+{
+  "sample": true,
+  "service_constraints": [
+    {
+      "service_name": "SEO",
+      "answer_scope": "Use only approved source facts.",
+      "limitations": [
+        "No guaranteed rankings or business outcomes",
+        "Prices require business review"
+      ]
+    }
+  ]
+}

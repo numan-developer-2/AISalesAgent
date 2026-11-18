@@ -1,0 +1,25 @@
+services:
+  api:
+    build: .
+    image: ai-sales-workspace:local
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      APP_MODE: demo
+      APP_ORIGIN: http://localhost:8000
+      COOKIE_SECURE: "false"
+    volumes:
+      - runtime:/app/data/runtime
+    restart: unless-stopped
+  worker:
+    image: ai-sales-workspace:local
+    command: ["python", "-m", "workspace.worker"]
+    environment:
+      APP_MODE: demo
+    volumes:
+      - runtime:/app/data/runtime
+    depends_on:
+      - api
+    restart: unless-stopped
+volumes:
+  runtime:
